@@ -1,5 +1,15 @@
 ## Hi there 👋
 
+```java
+public class Profile {
+
+    private String name = "Luiz Felipe Correia";
+    private String role = "Systems Analysis and Development Student";
+    private String[] stack = {"Java", "Spring Boot", "Angular", "MySQL"};
+    private String mindset = "Always learning";
+
+}
+
 <!--
 **Luife-correia/Luife-correia** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
