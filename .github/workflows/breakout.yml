@@ -1,20 +1,32 @@
-            - name: generate-breakout-game-from-github-contribution-graph
-  # You may pin to the exact commit or the version.
-  # uses: cyprieng/github-breakout@60c43dca3a1361fbc9fb9bb533b5193296345c4f
-  uses: cyprieng/github-breakout@60c43dca3a1361fbc9fb9bb533b5193296345c4f
-  with:
-    # Github username
-    github_username: Luife-correia 
-    # Github token used to fetch the contributions. Default to the action token if empty.
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    # Ghost bricks for days without contribution
-    enable_ghost_bricks: true
-    # Output path for SVGs
-    output_path: output/github-contribution-breakout.svg
-    # Paddle color
-    paddle_color: "#00ffcc"
-    # Ball color
-    ball_color: "#ff0066"
-    # Bricks colors
-    bricks_colors: "#ffcc00,#ff6600,#00ccff"
-          
+name: generate-breakout-game-from-github-contribution-graph
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # roda todo dia à meia-noite
+  workflow_dispatch: # permite rodar manualmente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Generate Breakout Game
+        uses: cyprieng/github-breakout@v1
+        with:
+          github_username: Luife-correia
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          enable_ghost_bricks: true
+          output_path: output/github-contribution-breakout.svg
+          paddle_color: "#00ffcc"
+          ball_color: "#ff0066"
+          bricks_colors: "#ffcc00,#ff6600,#00ccff"
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add output/github-contribution-breakout.svg
+          git commit -m "Update Breakout Game"
+          git push
