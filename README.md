@@ -10,10 +10,11 @@ public class Profile {
 
 }
 ```
+### Pacman
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/luife-correia/luife-correia/output/pacman-contribution-graph-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/luife-correia/luife-correia/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/luife-correia/luife-correia/output/pacman-contribution-graph.svg">
+  <img alt="Pacman contribution graph" src="https://raw.githubusercontent.com/luife-correia/luife-correia/output/pacman-contribution-graph.svg">
 </picture>
 
 
