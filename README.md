@@ -8,7 +8,14 @@ public class Profile {
 
 }
 ```
+## Sobre mim
 
+Sou estudante de **Análise e Desenvolvimento de Sistemas** com experiência em programação, design centrado no usuário e projetos práticos que unem tecnologia e criatividade. Atualmente estou estudando para ser desenvolvedor fullstack em **Java** e **Angular**.
+Entre minhas criações estão:
+
+- Um RPG em Java para ensinar lógica de programação
+
+- Um sistema em Python + OpenCV que permite controlar o computador por gestos, explorando acessibilidade e automação
 
 ---
 <div align="center">
