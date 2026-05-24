@@ -10,6 +10,7 @@ public class Profile {
 
 }
 ```
-![Breakout](https://raw.githubusercontent.com/Luife-correia/Luife-correia/output/github-contribution-breakout.svg)
+![Breakout](https://raw.githubusercontent.com/Luife-correia/Luife-correia/main/output/github-contribution-breakout.svg)
+
 
 
