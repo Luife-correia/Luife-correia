@@ -1,5 +1,3 @@
-## Hi there 👋
-
 ```java
 public class Profile {
 
@@ -11,13 +9,15 @@ public class Profile {
 }
 ```
 
----
-##Contato
 
+---
+## Contato
+<div align="center">
 [![Gmail Badge](https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=mailto:luizcorreialfc@gmail.com)](mailto:luizcorreialfc@gmail.com)
 [![LinkedIn Badge](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/luifecorreia)](https://www.linkedin.com/in/luifecorreia)
+</div>
 
----
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/luife-correia/luife-correia/output/breakout-contribution-graph-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/luife-correia/luife-correia/output/breakout-contribution-graph.svg">
