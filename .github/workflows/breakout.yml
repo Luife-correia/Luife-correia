@@ -1,24 +1,12 @@
-name: generate-breakout-game-from-github-contribution-graph
+- name: generate-breakout-game-from-github-contribution-graph
+  uses: cyprieng/github-breakout@v1
+  with:
+    github_username: Luife-correia
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+    output_path: output/github-contribution-breakout.svg
+    enable_ghost_bricks: true
+    paddle_color: "#00ffcc"
+    ball_color: "#ff0066"
+    bricks_colors: "#ffcc00,#ff6600,#00ccff"
 
-on:
-  schedule:
-    - cron: "0 0 * * *" # roda todo dia à meia-noite
-  workflow_dispatch: # permite rodar manualmente
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Generate Breakout Game
-        uses: cyprieng/github-breakout@v1.2.4
-
-      - name: Commit and Push
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Update Breakout Game"
-          git push
+          
