@@ -1,32 +1,44 @@
-name: generate-breakout-game-from-github-contribution-graph
+name: generate breakout svg
 
 on:
   schedule:
     - cron: "0 0 * * *" # roda todo dia à meia-noite
-  workflow_dispatch: # permite rodar manualmente
+  workflow_dispatch:
 
 jobs:
-  build:
+  generate-svg:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    timeout-minutes: 5
 
-      - name: Generate Breakout Game
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate SVGs
         uses: cyprieng/github-breakout@v1
         with:
           github_username: Luife-correia
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          enable_ghost_bricks: true
-          output_path: output/github-contribution-breakout.svg
-          paddle_color: "#00ffcc"
-          ball_color: "#ff0066"
-          bricks_colors: "#ffcc00,#ff6600,#00ccff"
 
-      - name: Commit and Push
+      - name: Move generated SVGs to temp
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add output/github-contribution-breakout.svg
-          git commit -m "Update Breakout Game"
-          git push
+          mkdir -p /tmp/breakout-images
+          mv output/light.svg /tmp/breakout-images/breakout-light.svg
+          mv output/dark.svg /tmp/breakout-images/breakout-dark.svg
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and force-push SVGs to target branch
+        run: |
+          git checkout --orphan github-breakout
+          git rm -rf .
+          mkdir images
+          mv /tmp/breakout-images/* images/
+          git add images
+          git commit -m "chore: update GitHub breakout SVGs" || echo "No changes to commit"
+          git push --force origin github-breakout
