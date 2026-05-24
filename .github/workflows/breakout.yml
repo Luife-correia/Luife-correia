@@ -10,11 +10,11 @@
     # Ghost bricks for days without contribution
     enable_ghost_bricks: true
     # Output path for SVGs
-    output_path: # optional
+    output_path: output/github-contribution-breakout.svg
     # Paddle color
-    paddle_color: # optional
+    paddle_color: "#00ffcc"
     # Ball color
-    ball_color: # optional
+    ball_color: "#ff0066"
     # Bricks colors
-    bricks_colors: # optional
+    bricks_colors: "#ffcc00,#ff6600,#00ccff"
           
