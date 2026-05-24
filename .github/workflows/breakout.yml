@@ -1,12 +1,20 @@
-- name: generate-breakout-game-from-github-contribution-graph
+            - name: generate-breakout-game-from-github-contribution-graph
+  # You may pin to the exact commit or the version.
+  # uses: cyprieng/github-breakout@60c43dca3a1361fbc9fb9bb533b5193296345c4f
   uses: cyprieng/github-breakout@v1
   with:
-    github_username: Luife-correia
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    output_path: output/github-contribution-breakout.svg
-    enable_ghost_bricks: true
-    paddle_color: "#00ffcc"
-    ball_color: "#ff0066"
-    bricks_colors: "#ffcc00,#ff6600,#00ccff"
-
+    # Github username
+    github_username: 
+    # Github token used to fetch the contributions. Default to the action token if empty.
+    github_token: # optional, default is ${{ github.token }}
+    # Ghost bricks for days without contribution
+    enable_ghost_bricks: # optional
+    # Output path for SVGs
+    output_path: # optional
+    # Paddle color
+    paddle_color: # optional
+    # Ball color
+    ball_color: # optional
+    # Bricks colors
+    bricks_colors: # optional
           
